@@ -1,8 +1,4 @@
 import com.hp.lft.sdk.Desktop;
-import com.hp.lft.sdk.stdwin.Dialog;
-import com.hp.lft.sdk.stdwin.DialogDescription;
-import com.hp.lft.sdk.stdwin.Window;
-import com.hp.lft.sdk.stdwin.WindowDescription;
 import com.hp.lft.sdk.web.*;
 import com.hp.lft.verifications.Verify;
 import org.junit.*;
@@ -47,10 +43,7 @@ public class LeanFtTest extends UnitTestClassBase {
 
             //Login
             //Enter User Name
-
-
-
-            com.hp.lft.sdk.web.EditField domainUserNameEditField = browser.describe(com.hp.lft.sdk.web.EditField.class, new com.hp.lft.sdk.web.EditFieldDescription.Builder()
+            EditField domainUserNameEditField = browser.describe(EditField.class, new EditFieldDescription.Builder()
                     .name("DomainUserName")
                     .tagName("INPUT")
                     .type("text").build());
@@ -61,7 +54,7 @@ public class LeanFtTest extends UnitTestClassBase {
             domainUserNameEditField.click();
             domainUserNameEditField.setValue("crst\\jjuehring");
             //Enter Password
-            com.hp.lft.sdk.web.EditField userPassEditField = browser.describe(com.hp.lft.sdk.web.EditField.class, new com.hp.lft.sdk.web.EditFieldDescription.Builder()
+            EditField userPassEditField = browser.describe(EditField.class, new EditFieldDescription.Builder()
                     .name("UserPass")
                     .tagName("INPUT")
                     .type("password").build());
@@ -82,7 +75,7 @@ public class LeanFtTest extends UnitTestClassBase {
             com.hp.lft.report.Reporter.endReportingContext();
             machineTypeRadioGroup.click();
             //Click Sign In Button
-            com.hp.lft.sdk.web.Button signInButton = browser.describe(com.hp.lft.sdk.web.Button.class, new com.hp.lft.sdk.web.ButtonDescription.Builder()
+            Button signInButton = browser.describe(Button.class, new ButtonDescription.Builder()
                     .buttonType("submit")
                     .name("Sign in")
                     .tagName("INPUT").build());
@@ -120,10 +113,9 @@ public class LeanFtTest extends UnitTestClassBase {
 
             remoteAppDialog.click();
 
-            com.hp.lft.sdk.stdwin.Button connectButton =
-                    remoteAppDialog.describe(com.hp.lft.sdk.stdwin.Button.class, new com.hp.lft.sdk.stdwin.ButtonDescription.Builder()
-                            .nativeClass("Button")
-                            .text("Co&nnect").build());
+            Button connectButton = remoteAppDialog.describe(Button.class, new ButtonDescription.Builder()
+                    .nativeClass("Button")
+                    .text("Co&nnect").build());
             connectButton.click();
 
             Window mcLeodDeploymentCR1MCLDTS1CRSTComWindow = Desktop.describe(Window.class, new WindowDescription.Builder()
