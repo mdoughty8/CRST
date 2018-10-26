@@ -4,7 +4,6 @@ import com.hp.lft.verifications.Verify;
 import org.junit.*;
 import unittesting.UnitTestClassBase;
 
-
 public class LeanFtTest extends UnitTestClassBase {
 
     public LeanFtTest() {
